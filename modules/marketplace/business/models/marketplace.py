@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import Dict, Optional
+from wsgiref import validate
 from redis_om import HashModel, Field
 
 
@@ -25,5 +26,6 @@ class Marketplace(HashModel):
     modules: Typeconfig
     adapters: Typeconfig
     templates: Typeconfig
+    validater: Typeconfig
     created_at: datetime = Field(index=True, default=datetime.today())
     updated_at: Optional[datetime] = Field(index=True, default=datetime.today())
